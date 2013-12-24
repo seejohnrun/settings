@@ -47,4 +47,20 @@ describe(settings, function () {
 
   });
 
+  describe('existing before a default', function () {
+
+    var value = 5;
+
+    before(function () {
+      this.o = settings.create();
+      this.o.h = value;
+      this.o.setDefault(value + 10000); // some other number
+    });
+
+    it('should keep the original value', function () {
+      assert.strictEqual(this.o.h, value);
+    });
+
+  });
+
 });
