@@ -63,4 +63,18 @@ describe(settings, function () {
 
   });
 
+  describe('with defaults on init', function () {
+
+    var defaultValue = 1;
+
+    before(function () {
+      this.o = settings.create({ h: defaultValue });
+    });
+
+    it('should use the default', function () {
+      assert.strictEqual(this.o.h, defaultValue);
+    });
+
+  });
+
 });
